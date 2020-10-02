@@ -1,32 +1,33 @@
 part of './../filter_list.dart';
+
 class FilterListWidget extends StatefulWidget {
-  FilterListWidget({
-    Key key,
-    this.height,
-    this.width,
-    this.selectedTextList,
-    this.allTextList,
-    this.borderRadius = 20,
-    this.headlineText = "Select here",
-    this.searchFieldHintText = "Search here",
-    this.hideSelectedTextCount = false,
-    this.hideSearchField = false,
-    this.hidecloseIcon = true,
-    this.hideHeader = false,
-    this.hideheaderText = false,
-    this.closeIconColor = Colors.black,
-    this.headerTextColor = Colors.black,
-    this.applyButonTextColor = Colors.white,
-    this.applyButonTextBackgroundColor = Colors.blue,
-    this.allResetButonColor = Colors.blue,
-    this.selectedTextColor = Colors.white,
-    this.backgroundColor = Colors.white,
-    this.unselectedTextColor = Colors.black,
-    this.searchFieldBackgroundColor = const Color(0xfff5f5f5),
-    this.selectedTextBackgroundColor = Colors.blue,
-    this.unselectedTextbackGroundColor = const Color(0xfff8f8f8),
-    this.onApplyButtonClick
-  }) : super(key: key);
+  FilterListWidget(
+      {Key key,
+      this.height,
+      this.width,
+      this.selectedTextList,
+      this.allTextList,
+      this.borderRadius = 20,
+      this.headlineText = "Select here",
+      this.searchFieldHintText = "Search here",
+      this.hideSelectedTextCount = false,
+      this.hideSearchField = false,
+      this.hidecloseIcon = true,
+      this.hideHeader = false,
+      this.hideheaderText = false,
+      this.closeIconColor = Colors.black,
+      this.headerTextColor = Colors.black,
+      this.applyButonTextColor = Colors.white,
+      this.applyButonTextBackgroundColor = Colors.blue,
+      this.allResetButonColor = Colors.blue,
+      this.selectedTextColor = Colors.white,
+      this.backgroundColor = Colors.white,
+      this.unselectedTextColor = Colors.black,
+      this.searchFieldBackgroundColor = const Color(0xfff5f5f5),
+      this.selectedTextBackgroundColor = Colors.blue,
+      this.unselectedTextbackGroundColor = const Color(0xfff8f8f8),
+      this.onApplyButtonClick})
+      : super(key: key);
   final double height;
   final double width;
   final double borderRadius;
@@ -242,7 +243,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
       alignment: Alignment.bottomCenter,
       child: Container(
         height: 45,
-        width: MediaQuery.of(context).size.width * .9,
+        width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         alignment: Alignment.center,
         child: Row(
@@ -272,7 +273,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                         },
                       );
                     },
-                   child: Container(
+                    child: Container(
                       height: double.infinity,
                       alignment: Alignment.center,
                       child: Text(
@@ -308,11 +309,10 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(25))),
                     onPressed: () {
-                      if(widget.onApplyButtonClick != null){
+                      if (widget.onApplyButtonClick != null) {
                         widget.onApplyButtonClick(_selectedTextList);
-                      }
-                      else{
-                         Navigator.pop(context, _selectedTextList);
+                      } else {
+                        Navigator.pop(context, _selectedTextList);
                       }
                     },
                     child: Center(
