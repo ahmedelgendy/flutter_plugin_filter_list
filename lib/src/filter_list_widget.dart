@@ -278,7 +278,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       child: Text(
                         'All',
                         style: Theme.of(context).textTheme.headline.copyWith(
-                            fontSize: 20, color: widget.allResetButonColor),
+                            fontSize: 16, color: widget.allResetButonColor),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -297,7 +297,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       child: Text(
                         'Reset',
                         style: Theme.of(context).textTheme.headline.copyWith(
-                            fontSize: 20, color: widget.allResetButonColor),
+                            fontSize: 16, color: widget.allResetButonColor),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -319,7 +319,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       child: Text(
                         'Apply',
                         style: Theme.of(context).textTheme.headline.copyWith(
-                            fontSize: 20, color: widget.applyButonTextColor),
+                            fontSize: 16, color: widget.applyButonTextColor),
                         textAlign: TextAlign.center,
                       ),
                     ),
