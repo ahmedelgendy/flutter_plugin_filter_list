@@ -262,6 +262,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                 ],
               ),
               child: Row(
+                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   FlatButton(
                     shape: RoundedRectangleBorder(
@@ -317,7 +318,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                     },
                     child: Center(
                       child: Text(
-                        'Apply',
+                        'Filter',
                         style: Theme.of(context).textTheme.headline.copyWith(
                             fontSize: 16, color: widget.applyButonTextColor),
                         textAlign: TextAlign.center,
