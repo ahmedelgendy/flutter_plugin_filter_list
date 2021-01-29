@@ -18,6 +18,7 @@ class FilterListWidget extends StatefulWidget {
       this.closeIconColor = Colors.black,
       this.headerTextColor = Colors.black,
       this.applyButonTextColor = Colors.white,
+      this.resetMethod,
       this.applyButonTextBackgroundColor = Colors.blue,
       this.allResetButonColor = Colors.blue,
       this.selectedTextColor = Colors.white,
@@ -44,6 +45,7 @@ class FilterListWidget extends StatefulWidget {
   final Color searchFieldBackgroundColor;
   final Color selectedTextBackgroundColor;
   final Color unselectedTextbackGroundColor;
+  final Function resetMethod;
 
   final String headlineText;
   final String searchFieldHintText;
@@ -243,7 +245,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
       alignment: Alignment.bottomCenter,
       child: Container(
         height: 45,
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.of(context).size.width - 20,
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         alignment: Alignment.center,
         child: Row(
@@ -280,7 +282,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       child: Text(
                         'All',
                         style: Theme.of(context).textTheme.headline.copyWith(
-                            fontSize: 16, color: widget.allResetButonColor),
+                            fontSize: 14, color: widget.allResetButonColor),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -291,6 +293,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                     onPressed: () {
                       setState(() {
                         _selectedTextList.clear();
+                        widget.resetMethod();
                       });
                     },
                     child: Container(
@@ -299,7 +302,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       child: Text(
                         'Reset',
                         style: Theme.of(context).textTheme.headline.copyWith(
-                            fontSize: 16, color: widget.allResetButonColor),
+                            fontSize: 14, color: widget.allResetButonColor),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -312,6 +315,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                     onPressed: () {
                       if (widget.onApplyButtonClick != null) {
                         widget.onApplyButtonClick(_selectedTextList);
+                        Navigator.pop(context);
                       } else {
                         Navigator.pop(context, _selectedTextList);
                       }
@@ -320,7 +324,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       child: Text(
                         'Filter',
                         style: Theme.of(context).textTheme.headline.copyWith(
-                            fontSize: 16, color: widget.applyButonTextColor),
+                            fontSize: 14, color: widget.applyButonTextColor),
                         textAlign: TextAlign.center,
                       ),
                     ),

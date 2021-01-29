@@ -9,6 +9,7 @@ class FilterListDialog {
     context, {
     double height,
     double width,
+    Function resetMethod,
     List<String> selectedTextList,
     List<String> allTextList,
     double borderRadius = 20,
@@ -72,7 +73,8 @@ class FilterListDialog {
               hideHeader: hideheader,
               hideheaderText: hideheaderText,
               hideSearchField: hideSearchField,
-              onApplyButtonClick:onApplyButtonClick
+              onApplyButtonClick:onApplyButtonClick,
+              resetMethod: resetMethod,
             ),
           ),
         );
