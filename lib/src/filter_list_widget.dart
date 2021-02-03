@@ -266,27 +266,27 @@ class _FilterListWidgetState extends State<FilterListWidget> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  FlatButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
-                    onPressed: () {
-                      setState(
-                        () {
-                          _selectedTextList = List.from(_allTextList);
-                        },
-                      );
-                    },
-                    child: Container(
-                      height: double.infinity,
-                      alignment: Alignment.center,
-                      child: Text(
-                        'All',
-                        style: Theme.of(context).textTheme.headline.copyWith(
-                            fontSize: 14, color: widget.allResetButonColor),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
+                  // FlatButton(
+                  //   shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.all(Radius.circular(25))),
+                  //   onPressed: () {
+                  //     setState(
+                  //       () {
+                  //         _selectedTextList = List.from(_allTextList);
+                  //       },
+                  //     );
+                  //   },
+                  //   child: Container(
+                  //     height: double.infinity,
+                  //     alignment: Alignment.center,
+                  //     child: Text(
+                  //       'All',
+                  //       style: Theme.of(context).textTheme.headline.copyWith(
+                  //           fontSize: 14, color: widget.allResetButonColor),
+                  //       textAlign: TextAlign.center,
+                  //     ),
+                  //   ),
+                  // ),
                   FlatButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(25))),
@@ -300,7 +300,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       height: double.infinity,
                       alignment: Alignment.center,
                       child: Text(
-                        'Reset',
+                        'Sıfırla',
                         style: Theme.of(context).textTheme.headline.copyWith(
                             fontSize: 14, color: widget.allResetButonColor),
                         textAlign: TextAlign.center,
@@ -322,7 +322,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                     },
                     child: Center(
                       child: Text(
-                        'Filter',
+                        'Uygula',
                         style: Theme.of(context).textTheme.headline.copyWith(
                             fontSize: 14, color: widget.applyButonTextColor),
                         textAlign: TextAlign.center,
