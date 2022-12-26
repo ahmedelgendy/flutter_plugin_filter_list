@@ -301,7 +301,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       alignment: Alignment.center,
                       child: Text(
                         'Sıfırla',
-                        style: Theme.of(context).textTheme.headline.copyWith(
+                        style: Theme.of(context).textTheme.subtitle2.copyWith(
                             fontSize: 14, color: widget.allResetButonColor),
                         textAlign: TextAlign.center,
                       ),
