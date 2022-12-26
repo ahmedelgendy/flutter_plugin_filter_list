@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         headlineText: "Select Count",
         searchFieldHintText: "Search Here",
         selectedTextList: selectedCountList, onApplyButtonClick: (list) {
-        if (list != null) {
+      if (list != null) {
         setState(() {
           selectedCountList = List.from(list);
         });
@@ -95,36 +95,38 @@ class _MyHomePageState extends State<MyHomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              FlatButton(
-                onPressed: () async {
-                  var list = await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => FilterPage(
-                        allTextList: countList,
+              TextButton(
+                  onPressed: () async {
+                    var list = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FilterPage(
+                          allTextList: countList,
+                        ),
                       ),
-                    ),
-                  );
-                  if (list != null) {
-                    setState(() {
-                      selectedCountList = List.from(list);
-                    });
-                  }
-                },
-                child: Text(
-                  "Filter Page",
-                  style: TextStyle(color: Colors.white),
-                ),
-                color: Colors.blue,
-              ),
-              FlatButton(
-                onPressed: _openFilterDialog,
-                child: Text(
-                  "Filter Dialog",
-                  style: TextStyle(color: Colors.white),
-                ),
-                color: Colors.blue,
-              ),
+                    );
+                    if (list != null) {
+                      setState(() {
+                        selectedCountList = List.from(list);
+                      });
+                    }
+                  },
+                  child: Text(
+                    "Filter Page",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.blue,
+                  )),
+              TextButton(
+                  onPressed: _openFilterDialog,
+                  child: Text(
+                    "Filter Dialog",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.blue,
+                  )),
             ],
           )
         ],
