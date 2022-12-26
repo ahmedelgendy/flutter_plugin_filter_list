@@ -143,7 +143,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                             widget.headlineText.toUpperCase(),
                             style: Theme.of(context)
                                 .textTheme
-                                .headline
+                                .headline1
                                 .copyWith(
                                     fontSize: 18,
                                     color: widget.headerTextColor),
@@ -287,9 +287,9 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                   //     ),
                   //   ),
                   // ),
-                  FlatButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                  TextButton(
+                    // shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.all(Radius.circular(25))),
                     onPressed: () {
                       setState(() {
                         _selectedTextList.clear();
@@ -323,7 +323,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                     child: Center(
                       child: Text(
                         'Uygula',
-                        style: Theme.of(context).textTheme.headline.copyWith(
+                        style: Theme.of(context).textTheme.headline1.copyWith(
                             fontSize: 14, color: widget.applyButonTextColor),
                         textAlign: TextAlign.center,
                       ),
